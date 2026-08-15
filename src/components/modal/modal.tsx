@@ -13,8 +13,17 @@ export const Modal: FC<TModalProps> = memo(({ title, onClose, children }) => {
     };
 
     document.addEventListener('keydown', handleEsc);
+
+    const rootApp = document.getElementById('root');
+    if (rootApp) {
+      rootApp.style.pointerEvents = 'none';
+    }
+
     return () => {
       document.removeEventListener('keydown', handleEsc);
+      if (rootApp) {
+        rootApp.style.pointerEvents = 'auto';
+      }
     };
   }, [onClose]);
 
