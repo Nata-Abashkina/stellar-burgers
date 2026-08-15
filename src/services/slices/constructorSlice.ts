@@ -45,7 +45,7 @@ const constructorSlice = createSlice({
       prepare: (ingredient: TIngredient) => ({
         payload: {
           ...ingredient,
-          id: Math.random().toString(36).substring(2, 9) // Вызываем генератор тут, до редьюсера!
+          id: Math.random().toString(36).substring(2, 9)
         } as TConstructorIngredient
       })
     },
@@ -65,8 +65,6 @@ const constructorSlice = createSlice({
     },
     clearOrderModal: (state) => {
       state.orderModalData = null;
-      state.bun = null;
-      state.ingredients = [];
     }
   },
   extraReducers: (builder) => {
@@ -78,6 +76,8 @@ const constructorSlice = createSlice({
       .addCase(placeOrder.fulfilled, (state, action) => {
         state.orderRequest = false;
         state.orderModalData = action.payload;
+        state.bun = null;
+        state.ingredients = [];
       })
       .addCase(placeOrder.rejected, (state, action) => {
         state.orderRequest = false;
