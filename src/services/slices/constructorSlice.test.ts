@@ -3,18 +3,12 @@ import constructorReducer, {
   removeIngredient,
   moveIngredient,
   clearOrderModal,
-  placeOrder
+  placeOrder,
+  initialState
 } from './constructorSlice';
 import { TIngredient, TConstructorIngredient, TOrder } from '@utils-types';
 
 describe('constructorSlice', () => {
-  const initialState = {
-    bun: null as TIngredient | null,
-    ingredients: [] as TConstructorIngredient[],
-    orderRequest: false,
-    orderModalData: null as TOrder | null,
-    error: null as string | null
-  };
 
   const mockIngredient: TIngredient = {
     _id: '1',

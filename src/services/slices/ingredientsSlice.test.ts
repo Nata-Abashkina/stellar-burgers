@@ -1,12 +1,7 @@
-import ingredientsReducer, { fetchIngredients } from './ingredientsSlice';
+import ingredientsReducer, { fetchIngredients, initialState } from './ingredientsSlice';
 import { TIngredient } from '../../utils/types';
 
 describe('ingredientsSlice', () => {
-  const initialState = {
-    ingredients: [] as TIngredient[],
-    isLoading: false,
-    error: null as string | null
-  };
 
   const mockIngredients: TIngredient[] = [
     { _id: '1', name: 'Булка', type: 'bun', proteins: 1, fat: 1, carbohydrates: 1, calories: 1, price: 1, image: '', image_mobile: '', image_large: '' },

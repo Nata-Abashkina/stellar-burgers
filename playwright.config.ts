@@ -4,7 +4,6 @@ export default defineConfig({
   testDir: './tests',
   testMatch: '**/*.pl.ts',
   use: {
-    baseURL: 'http://localhost:4000',
-    headless: false
+    baseURL: 'http://localhost:4000'
   }
 });
