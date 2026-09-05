@@ -10,13 +10,13 @@ export const fetchIngredients = createAsyncThunk(
   }
 );
 
-interface IngredientsState {
+export interface IngredientsState {
   ingredients: TIngredient[];
   isLoading: boolean;
   error: string | null;
 }
 
-const initialState: IngredientsState = {
+export const initialState: IngredientsState = {
   ingredients: [],
   isLoading: false,
   error: null
